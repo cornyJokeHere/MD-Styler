@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Styler</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="print.css">
     <link id="theme-stylesheet" rel="stylesheet" href="">
     <style>
         *, *::before, *::after {
@@ -124,7 +125,10 @@
 
         @page {
             size: A4;
-            margin: 0;
+            margin: var(--print-margin-top, 15mm)
+                   var(--print-margin-right, 15mm)
+                   var(--print-margin-bottom, 15mm)
+                   var(--print-margin-left, 15mm);
         }
 
         @media print {
@@ -143,7 +147,7 @@
 
             .preview-content {
                 max-width: none;
-                padding: 20mm 22mm;
+                padding: 0;
                 margin: 0;
             }
         }

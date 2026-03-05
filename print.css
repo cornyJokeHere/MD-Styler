@@ -1,0 +1,14 @@
+@media print {
+    .preview-content {
+        orphans: 2;
+        widows: 2;
+    }
+
+    .preview-content h1,
+    .preview-content h2,
+    .preview-content h3,
+    .preview-content h4,
+    .preview-content strong {
+        break-after: avoid;
+    }
+}
