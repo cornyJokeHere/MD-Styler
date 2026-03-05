@@ -199,6 +199,7 @@
 
 @media print {
     .preview-content {
+        font-size: 11pt;
         padding-left: var(--print-bullet-inset, 1.2em) !important;
     }
 
