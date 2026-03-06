@@ -206,7 +206,11 @@
         marked.setOptions({ breaks: true, gfm: true });
 
         function render() {
-            preview.innerHTML = marked.parse(editor.value);
+            let html = marked.parse(editor.value);
+            html = html.replace(/ ([·—–])/g, '\u00A0$1');
+            html = html.replace(/([—–]) /g, '$1\u00A0');
+            html = html.replace(/(\d) ([%°])/g, '$1\u00A0$2');
+            preview.innerHTML = html;
         }
 
         editor.addEventListener('input', render);
